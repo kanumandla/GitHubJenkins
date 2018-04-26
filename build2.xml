@@ -43,7 +43,7 @@
     </description>
 
     <property name="testpath" value="${user.dir}"/>
-    <property name="jmeter.home" value="C:/Prem/apache-jmeter-3.2/extras"/>
+    <property name="jmeter.home" value="C:/Prem/apache-jmeter-3.2"/>
     <property name="report.title" value="Test Results"/>
 	 <echo>testpath = ${testpath}</echo>
 	<echo>jmeter.home = ${jmeter.home}</echo>
