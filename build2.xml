@@ -103,7 +103,7 @@
 		
 		<property name="User_Count" value="Users"/>
 
-    <property file="${RunName}.properties"/>
+    <property file="${RunName}"/>
 	
 	<echo> ${RunName} Test </echo>
 
