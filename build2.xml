@@ -72,7 +72,7 @@
 
     <!-- Allow jar to be picked up locally -->
     <path id="jmeter.classpath">
-        <fileset dir="${basedir}">
+        <fileset dir="${jmeter.home}">
           <include name="ant-jmeter*.jar"/>
         </fileset>
     </path>
@@ -193,7 +193,7 @@
             force="true"
             in="${testpath}/${test}.jtl"
             out="${testpath}/${test}_${RunName}.html"
-            style="${basedir}/jmeter-results-detail-report${style_version}.xsl">
+            style="${jmeter.home}/jmeter-results-detail-report${style_version}.xsl">
             <param name="showData" expression="${show-data}"/>
             <param name="titleReport" expression="${report.title}"/>
             <param name="dateReport" expression="${report.datestamp}"/>
@@ -202,13 +202,13 @@
 
     <!-- Copy report images if needed -->
     <target name="copy-images" depends="verify-images" unless="samepath">
-        <copy file="${basedir}/expand.png" tofile="${testpath}/expand.png"/>
-        <copy file="${basedir}/collapse.png" tofile="${testpath}/collapse.png"/>
+        <copy file="${jmeter.home}/expand.png" tofile="${testpath}/expand.png"/>
+        <copy file="${jmeter.home}/collapse.png" tofile="${testpath}/collapse.png"/>
     </target>
 
     <target name="verify-images">
         <condition property="samepath">
-                <equals arg1="${testpath}" arg2="${basedir}" />
+                <equals arg1="${testpath}" arg2="${jmeter.home}" />
         </condition>
     </target>
 
@@ -230,7 +230,7 @@
 <!-- implementing for second step-->
 
 <property name="testpath" value="${user.dir}"/>
-    <property name="jmeter.home" value="${basedir}/.."/>
+    <property name="jmeter.home" value="${jmeter.home}/.."/>
     <property name="report.title" value="Test Results2"/>
 	 
     
@@ -258,7 +258,7 @@
 
     <!-- Allow jar to be picked up locally -->
     <path id="jmeter.classpath">
-        <fileset dir="${basedir}">
+        <fileset dir="${jmeter.home}">
           <include name="ant-jmeter*.jar"/>
         </fileset>
     </path>
